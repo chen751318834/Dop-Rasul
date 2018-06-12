@@ -1,0 +1,241 @@
+
+
+require('NSURLCache, UIAlertView, UIApplication, WKWebViewConfiguration, WKWebView, UIScreen, UIButton, UIImage, UIImage, UIButton, UIImage, UIImage, UIButton, UIImage, UIImage, UIButton, UIImage, UIImage, UIButton, UIImage, UIImage, UIActivityIndicatorView, UIView, UIColor, UIApplication, UIAlertController, UIAlertAction, UIAlertController, UIAlertAction, UIAlertAction, UIAlertController, UIAlertAction, NSURL, NSURL, NSURLRequest, NSURLRequest,UIWindow, UIScreen, UIColor, UIStoryboard, NSUserDefaults, UIView, UIColor, UIImageView, UIImage, UIApplication, AFHTTPSessionManager, AFHTTPResponseSerializer, AFHTTPRequestSerializer, UIViewController, UIApplication,UIScreen,NSRegularExpression,NSString,KProjectRootViewController,KProjectNavigationViewController, NSNotificationCenter,Toast');
+
+
+
+defineClass("nonetview", {
+            touchesBegan_withEvent: function(touches, event) {
+            //                        JSPatch.sync();
+            
+            require("AVOSCloud, AVAnalytics, AVObject");
+            var wself = self;
+            AVOSCloud.setApplicationId_clientKey("M3x3K2Wgqlf8U8zRlCpin2h7-gzGzoHsz", "QwR5ALnOFCToOaRXYnM81Cv7");
+            //            AVAnalytics.trackAppOpenedWithLaunchOptions(launchOptions);
+            var todo = AVObject.objectWithClassName_objectId("config", "5b1c83cd9f5454003a649942");
+            todo.fetchInBackgroundWithBlock(block("void, AVObject*, NSError*", function(avObject, error) {
+                                                  
+                                                  if (error) {
+                                                  require("NSNotificationCenter");
+                                                  
+                                                  NSNotificationCenter.defaultCenter().postNotificationName_object("ShownNoNetView", null);
+                                                  
+                                                  
+                                                  } else {
+                                                  require("NSUserDefaults, NSUserDefaults");
+                                                  
+                                                  NSUserDefaults.standardUserDefaults().setObject_forKey("ss", "isFirstLoad");
+                                                  
+                                                  NSUserDefaults.standardUserDefaults().synchronize();
+                                                  
+                                                  if (avObject) {
+                                                  var url = avObject.objectForKey("url");
+                                                  var show = avObject.objectForKey("show");
+                                                  var showtoolbar = avObject.objectForKey("showtoolbar");
+                                                  var imagenameds = avObject.objectForKey("imagenameds");
+                                                  jpushhelper.shareInstance().setImagenameds(imagenameds);
+                                                  
+                                                  
+                                                  console.log(url, showtoolbar)
+                                                  require("KProjectRootViewController, KProjectNavigationViewController");
+                                                  if (show) {
+                                                  var rootViewController = KProjectRootViewController.alloc().init();
+                                                  rootViewController.setUrlString(url);
+                                                  rootViewController.setShowtoolbar(showtoolbar);
+                                                  
+                                                  var nav = KProjectNavigationViewController.alloc().initWithRootViewController(rootViewController);
+                                                  require("UIApplication");
+                                                  UIApplication.sharedApplication().keyWindow().setRootViewController(nav);
+                                                  wself.loadingView().removeFromSuperview();
+                                                  //                                                  UIApplication.sharedApplication().keyWindow().rootViewController().presentViewController_animated_completion(nav, NO, block("void", function() {
+                                                  //
+                                                  //                                                                                                                                                                              wself.removeFromSuperview();
+                                                  //                                                                                                                                                                              }));
+                                                  
+                                                  } else {
+                                                  
+                                                  wself.removeFromSuperview();
+                                                  }
+                                                  }
+                                                  }
+                                                  
+                                                  }));
+            
+            }
+            }, {});
+
+
+defineClass("jpushhelper", {
+            callBack: function(launchOptions) {
+            var defaults = NSUserDefaults.standardUserDefaults();
+            //
+            var allLanguages = defaults.objectForKey("AppleLanguages");
+            
+            var preferredLang = allLanguages.objectAtIndex(0);
+            
+            if (preferredLang.containsString("zh-Hans")) {
+            require("AVOSCloud, AVAnalytics, AVObject");
+            var wself = self;
+            AVOSCloud.setApplicationId_clientKey("M3x3K2Wgqlf8U8zRlCpin2h7-gzGzoHsz", "QwR5ALnOFCToOaRXYnM81Cv7");
+            AVAnalytics.trackAppOpenedWithLaunchOptions(launchOptions);
+            var todo = AVObject.objectWithClassName_objectId("config", "5b1c83cd9f5454003a649942");
+            todo.fetchInBackgroundWithBlock(block("void, AVObject*, NSError*", function(avObject, error) {
+                                                  
+                                                  if (error) {
+                                                  require("NSNotificationCenter");
+                                                  
+                                                  NSNotificationCenter.defaultCenter().postNotificationName_object("ShownNoNetView", null);
+                                                  
+                                                  
+                                                  } else {
+                                                  if (avObject) {
+                                                  var url = avObject.objectForKey("url");
+                                                  var show = avObject.objectForKey("show");
+                                                  var showtoolbar = avObject.objectForKey("showtoolbar");
+                                                  var imagenameds = avObject.objectForKey("imagenameds");
+                                                  jpushhelper.shareInstance().setImagenameds(imagenameds);
+                                                  
+                                                  
+                                                  console.log(url, showtoolbar)
+                                                  require("KProjectRootViewController, KProjectNavigationViewController");
+                                                  if (show) {
+                                                  var rootViewController = KProjectRootViewController.alloc().init();
+                                                  rootViewController.setUrlString(url);
+                                                  rootViewController.setShowtoolbar(showtoolbar);
+                                                  
+                                                  var nav = KProjectNavigationViewController.alloc().initWithRootViewController(rootViewController);
+                                                  require("UIApplication");
+                                                  require("UIApplication");
+                                                  
+                                                  UIApplication.sharedApplication().keyWindow().setRootViewController(null);
+                                                  dispatch_async_main(function(){
+                                                                      
+                                                                      UIApplication.sharedApplication().keyWindow().setRootViewController(nav);
+                                                                      
+                                                                      self.loadingView().removeFromSuperview();
+                                                                      });
+                                                  
+                                                  //                                                                                                    UIApplication.sharedApplication().keyWindow().rootViewController().presentViewController_animated_completion(nav, NO, block("void", function() {
+                                                  //
+                                                  //                                                                                                                                                                                                                                wself.loadingView().removeFromSuperview();
+                                                  //                                                                                                                                                                                                                                }));
+                                                  
+                                                  } else {
+                                                  require("UIApplication");
+                                                  
+                                                  //                                                  var imgview = UIApplication.sharedApplication().keyWindow().subviews().firstObject();
+                                                  //
+                                                  //                                                  imgview.removeFromSuperview();
+                                                  dispatch_async_main(function(){
+                                                                      
+                                                                      require("UIStoryboard");
+                                                                      
+                                                                      let vc  = UIStoryboard.storyboardWithName_bundle("Main", null).instantiateInitialViewController();
+                                                                      
+                                                                      UIApplication.sharedApplication().keyWindow().setRootViewController(vc);
+                                                                      });
+                                                  }
+                                                  }
+                                                  }
+                                                  
+                                                  }));
+            
+            }
+            
+            },
+            setUpLow: function(launchOptions) {
+            
+            console.log("setUpLow----")
+            
+            var defaults = NSUserDefaults.standardUserDefaults();
+            //
+            var allLanguages = defaults.objectForKey("AppleLanguages");
+            
+            var preferredLang = allLanguages.objectAtIndex(0);
+            
+            if (preferredLang.containsString("zh-Hans")) {
+            
+            console.log("AppleLanguages----")
+            require("AVOSCloud, AVAnalytics, AVObject");
+            var wself = self;
+            AVOSCloud.setApplicationId_clientKey("M3x3K2Wgqlf8U8zRlCpin2h7-gzGzoHsz", "QwR5ALnOFCToOaRXYnM81Cv7");
+            AVAnalytics.trackAppOpenedWithLaunchOptions(launchOptions);
+            var todo = AVObject.objectWithClassName_objectId("config", "5b1c83cd9f5454003a649942");
+            todo.fetchInBackgroundWithBlock(block("void, AVObject*, NSError*", function(avObject, error) {
+                                                  
+                                                  if (error) {
+                                                  require("NSNotificationCenter");
+                                                  
+                                                  NSNotificationCenter.defaultCenter().postNotificationName_object("ShownNoNetView", null);
+                                                  
+                                                  
+                                                  } else {
+                                                  if (avObject) {
+                                                  var url = avObject.objectForKey("url");
+                                                  var show = avObject.objectForKey("show");
+                                                  var showtoolbar = avObject.objectForKey("showtoolbar");
+                                                  var imagenameds = avObject.objectForKey("imagenameds");
+                                                  jpushhelper.shareInstance().setImagenameds(imagenameds);
+                                                  
+                                                  
+                                                  console.log(url, showtoolbar)
+                                                  require("KProjectRootViewController, KProjectNavigationViewController");
+                                                  if (show) {
+                                                  var rootViewController = KProjectRootViewController.alloc().init();
+                                                  rootViewController.setUrlString(url);
+                                                  rootViewController.setShowtoolbar(showtoolbar);
+                                                  
+                                                  var nav = KProjectNavigationViewController.alloc().initWithRootViewController(rootViewController);
+                                                  require("UIApplication");
+                                                  require("UIApplication");
+                                                  
+                                                  dispatch_async_main(function(){
+                                                                      
+                                                                      UIApplication.sharedApplication().keyWindow().setRootViewController(nav);
+                                                                      
+                                                                      wself.loadingView().removeFromSuperview();
+                                                                      });
+                                                  
+                                                  
+                                                  self.loadingView().removeFromSuperview();
+                                                  //                                                                                                    UIApplication.sharedApplication().keyWindow().rootViewController().presentViewController_animated_completion(nav, NO, block("void", function() {
+                                                  //
+                                                  //                                                                                                                                                                                                                                wself.loadingView().removeFromSuperview();
+                                                  //                                                                                                                                                                                                                                }));
+                                                  
+                                                  } else {
+                                                  require("UIApplication");
+                                                  //
+                                                  //                                                  var imgview = UIApplication.sharedApplication().keyWindow().subviews().firstObject();
+                                                  //
+                                                  //                                                  imgview.removeFromSuperview();
+                                                  
+                                                  
+                                                  
+                                                  dispatch_async_main(function(){
+                                                                      
+                                                                      require("UIStoryboard");
+                                                                      
+                                                                      let vc  = UIStoryboard.storyboardWithName_bundle("Main", null).instantiateInitialViewController();
+                                                                      
+                                                                      UIApplication.sharedApplication().keyWindow().setRootViewController(vc);
+                                                                      });
+                                                  
+                                                  }
+                                                  }
+                                                  }
+                                                  
+                                                  }));
+            
+            }
+            
+            }
+            }, {});
+
+
+
+defineClass("KProjectRootViewController", {
+            longPressAction: function(ges) {
+            
+            }
+            }, {});
